@@ -5,6 +5,7 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:tidbisexample/User/bloc/user_bloc.dart';
 import 'package:tidbisexample/User/ui/screens/signin_screen.dart';
 
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.cyan,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-        home: AppCupertino()
+        home: SignInScreen()
         ),
         bloc: UserBloc(),
   // This widget is the root of your application.

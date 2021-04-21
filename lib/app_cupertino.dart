@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'Place/ui/screens/home.dart';
+import 'User/bloc/user_bloc.dart';
 import 'User/ui/screens/profile.dart';
 import 'Place/ui/screens/search.dart';
 
-class AppCupertino extends StatelessWidget{
+class AppsCupertino extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -33,7 +35,12 @@ class AppCupertino extends StatelessWidget{
 
             case 2:
               return CupertinoTabView(
-                builder: (BuildContext context ) => Profile(),
+                builder: (BuildContext context ) {
+                  return BlocProvider(
+                    child: Profile(),
+                    bloc: UserBloc(),
+                  );
+                },
               );
               break;
 
